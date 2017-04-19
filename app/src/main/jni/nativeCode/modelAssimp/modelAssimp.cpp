@@ -62,11 +62,37 @@ void ModelAssimp::PerformGLInits() {
     modelObject = new AssimpLoader();
 
     // extract the OBJ and companion files from assets
-    std::string objFilename, mtlFilename, texFilename;
+    std::string objFilename, mtlFilename, texFilename, str11,str22, strBG2, strlattice, strloftstep;
+    std::string strTmp;
+//    bool isFilesPresent  =
+//            gHelperObject->ExtractAssetReturnFilename("amenemhat/amenemhat.obj", objFilename) &&
+//            gHelperObject->ExtractAssetReturnFilename("amenemhat/amenemhat.mtl", mtlFilename) &&
+//            gHelperObject->ExtractAssetReturnFilename("amenemhat/amenemhat.jpg", texFilename);
+//    bool isFilesPresent  =
+//            gHelperObject->ExtractAssetReturnFilename("space/space_screen03.FBX", objFilename) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/11.jpg", str11) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/22.jpg", str22) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/BG2.jpg", strBG2 ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/lattice.jpg", strlattice ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/loftstep.jpg", strloftstep ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/mainspace.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/pingmu.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/roomspace.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/screen_var.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/seat_.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/space_.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/textures.2.png", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/TV1.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/TV2.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/TV3.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/TV4.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/TV5.jpg", strTmp ) &&
+//            gHelperObject->ExtractAssetReturnFilename("space/TV6.jpg", strTmp );
+
+
     bool isFilesPresent  =
-            gHelperObject->ExtractAssetReturnFilename("amenemhat/amenemhat.obj", objFilename) &&
-            gHelperObject->ExtractAssetReturnFilename("amenemhat/amenemhat.mtl", mtlFilename) &&
-            gHelperObject->ExtractAssetReturnFilename("amenemhat/amenemhat.jpg", texFilename);
+            gHelperObject->ExtractAssetReturnFilename("scene/door.FBX", objFilename);
+
     if( !isFilesPresent ) {
         MyLOGE("Model %s does not exist!", objFilename.c_str());
         return;
