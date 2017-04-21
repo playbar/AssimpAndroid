@@ -35,7 +35,15 @@ void Model::loadModel(string path)
 {
 	// Read file via ASSIMP
 	Assimp::Importer importer;
-	const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+//    unsigned flags = aiProcess_Triangulate |
+//                     aiProcess_FlipUVs |
+//                     aiProcessPreset_TargetRealtime_Quality |
+//                     aiProcess_FindInstances |
+//                     aiProcess_ValidateDataStructure |
+//                     aiProcess_OptimizeMeshes;
+//    importer.SetPropertyInteger( AI_CONFIG_PP_SBP_REMOVE, aiPrimitiveType_LINE | aiPrimitiveType_POINT );
+//    importer.SetPropertyInteger( AI_CONFIG_PP_PTV_NORMALIZE, true );
+	const aiScene* scene = importer.ReadFile(path, aiProcessPreset_TargetRealtime_Quality);
 	// Check for errors
 	if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) // if is Not Zero
 	{

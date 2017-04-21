@@ -48,7 +48,7 @@ private:
 
     std::vector<float> modelDefaultPosition;
     MyGLCamera * myGLCamera;
-    AssimpLoader * modelObject;
+//    AssimpLoader * modelObject;
     Shader mshader;
     Model *mModel;
 };
