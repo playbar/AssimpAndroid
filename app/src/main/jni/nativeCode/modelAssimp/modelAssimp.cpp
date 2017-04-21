@@ -36,6 +36,10 @@ ModelAssimp::ModelAssimp() {
     std::copy(&pos[0], &pos[5], std::back_inserter(modelDefaultPosition));
     myGLCamera->SetModelPosition(modelDefaultPosition);
 
+    std::string vertexShader    = "shaders/model_loading.vsh";
+    std::string fragmentShader  = "shaders/model_loading.fsh";
+
+
     modelObject = NULL;
 }
 
@@ -90,8 +94,13 @@ void ModelAssimp::PerformGLInits() {
 //            gHelperObject->ExtractAssetReturnFilename("space/TV6.jpg", strTmp );
 
 
-    bool isFilesPresent  =
-            gHelperObject->ExtractAssetReturnFilename("scene/door.FBX", objFilename);
+//    bool isFilesPresent  = gHelperObject->ExtractAssetReturnFilename("scene/door.FBX", objFilename);
+    bool isFilesPresent  = gHelperObject->ExtractAssetReturnFilename("spider/spider.obj", objFilename)
+                           && gHelperObject->ExtractAssetReturnFilename("spider/spider.mtl", objFilename)
+                           && gHelperObject->ExtractAssetReturnFilename("spider/drkwood2.jpg", strTmp )
+                           && gHelperObject->ExtractAssetReturnFilename("spider/engineflare1.jpg", strTmp )
+                           && gHelperObject->ExtractAssetReturnFilename("spider/SpiderTex.jpg", strTmp )
+                           && gHelperObject->ExtractAssetReturnFilename("spider/wal67ar_small.jpg", strTmp );
 
     if( !isFilesPresent ) {
         MyLOGE("Model %s does not exist!", objFilename.c_str());

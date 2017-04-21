@@ -63,7 +63,7 @@ model {
                              '-I' + file('src/main/jni/nativeCode/common'),
                              '-I' + file('src/main/externals/glm-0.9.7.5')])
 
-            cppFlags.addAll(['-std=c++11', '-Wall', '-fno-exceptions', '-fno-rtti'])
+            cppFlags.addAll(['-std=c++11', '-Wall', '-fexceptions', '-fno-rtti'])
             ldLibs.addAll(['android', 'log', 'EGL', 'GLESv2', "stdc++"])
         }
 

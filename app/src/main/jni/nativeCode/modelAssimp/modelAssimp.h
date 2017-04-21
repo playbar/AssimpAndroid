@@ -21,6 +21,7 @@
 #include "myGLFunctions.h"
 #include "myGLCamera.h"
 #include "assimpLoader.h"
+#include "Model.h"
 #include <sstream>
 #include <iostream>
 #include <stdio.h>
@@ -48,6 +49,8 @@ private:
     std::vector<float> modelDefaultPosition;
     MyGLCamera * myGLCamera;
     AssimpLoader * modelObject;
+    Shader mshader;
+    Model *mModel;
 };
 
 #endif //MODELASSIMP_H

@@ -305,7 +305,9 @@ void AssimpLoader::Render3DModel(glm::mat4 *mvpMat) {
     unsigned int numberOfLoadedMeshes = modelMeshes.size();
 
     // render all meshes
-    for (unsigned int n = 0; n < numberOfLoadedMeshes; ++n) {
+    for (unsigned int n = 0; n < numberOfLoadedMeshes; ++n)
+//    unsigned int n = 1;
+    {
 
         // Texture
         if (modelMeshes[n].textureIndex) {
